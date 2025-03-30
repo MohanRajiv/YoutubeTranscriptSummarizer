@@ -1,0 +1,23 @@
+[project]
+name = "youtube-transcript-summarizer"
+version = "0.1.0"
+description = "A YouTube video transcript summarizer using Gemini AI"
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit>=1.32.0",
+    "python-dotenv>=1.0.0",
+    "youtube-transcript-api>=0.6.2",
+    "google-generativeai>=0.3.2",
+    "requests>=2.31.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "B", "UP"] 
