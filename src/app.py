@@ -1,5 +1,6 @@
 """Main Streamlit application for YouTube Transcript Summarizer."""
 import os
+from typing import List
 import streamlit as st
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -17,7 +18,7 @@ load_dotenv()
 # Initialize Gemini service
 gemini_service = GeminiService(api_key=os.getenv("GOOGLE_API_KEY"))
 
-def print_time(search_word: str, time: list[float], lines: list[str]) -> None:
+def print_time(search_word: str, time: List[float], lines: List[str]) -> None:
     """Print search results with timestamps."""
     st.write(f"'{search_word}' was mentioned at:")
     

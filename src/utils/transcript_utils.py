@@ -1,6 +1,6 @@
 """Utility functions for handling YouTube transcripts."""
 import re
-from typing import List, Tuple, Dict, Any
+from typing import List, Tuple, Dict, Any, Optional
 
 def search_keyword_print_startimes(transcript: List[Dict[str, Any]], search_word: str) -> Tuple[List[float], List[str]]:
     """Search for a keyword in the transcript and return timestamps and lines."""
@@ -19,9 +19,9 @@ def search_keyword_print_startimes(transcript: List[Dict[str, Any]], search_word
 
 def extract_transcript_details(
     youtube_video_url: str,
-    start_time: float | None = None,
-    end_time: float | None = None
-) -> str | None:
+    start_time: Optional[float] = None,
+    end_time: Optional[float] = None
+) -> Optional[str]:
     """Extract transcript details from a YouTube video."""
     from youtube_transcript_api import YouTubeTranscriptApi
     
